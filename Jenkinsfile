@@ -10,7 +10,7 @@ pipeline {
         stage('Build') { 
             steps {
                 echo "This is a Build stage"
-                startBuild()
+                build()
                 sh "pwd"
             }
         }
