@@ -1,9 +1,15 @@
 #!/bin/groovy
+
+library identifier: 'jenkins-shared-lib@master',retriever: modernSCM([$class: 'GitSCMSource',
+	remote: 'https://github.com/aswini1988/jenkins-shared-lib.git',
+	credentialsId: 'dockerAswini'])
+
 pipeline {
     agent any 
     stages {
         stage('Build') { 
             steps {
+                build()
                 echo "This is a Build stage"
                 sh "pwd"
             }
