@@ -14,6 +14,12 @@ pipeline {
                 sh "pwd"
             }
         }
+        stage('Deploy') { 
+            steps {
+                echo "This is a Deploy stage"
+                startDeploy()
+            }
+        }
         stage('Test') { 
             steps {
                 echo "This is a Test stage"
@@ -21,11 +27,6 @@ pipeline {
                     pwd
                     ls -la
                 """
-            }
-        }
-        stage('Deploy') { 
-            steps {
-                echo "This is a Deploy stage"
             }
         }
     }
