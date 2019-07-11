@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                new StartBuild().build()
+                build()
                 echo "This is a Build stage"
                 sh "pwd"
             }
